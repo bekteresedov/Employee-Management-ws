@@ -11,10 +11,10 @@ import lombok.experimental.FieldDefaults;
 public class EmployeeCreate {
 
 	@NotBlank
-	String name;
+	String firstName;
 
 	@NotBlank
-	String surname;
+	String lastName;
 	@Email
 	String email;
 

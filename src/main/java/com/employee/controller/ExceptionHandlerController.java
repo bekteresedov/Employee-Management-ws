@@ -1,7 +1,7 @@
 package com.employee.controller;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.AccessDeniedException;
+//import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -44,12 +44,12 @@ public class ExceptionHandlerController {
 				fieldMessage + ErrorCodeEnum.VALIDATION_ERROR.getMessage());
 	}
 
-	@ExceptionHandler(AccessDeniedException.class)
-
-	@ResponseStatus(code = HttpStatus.FORBIDDEN)
-	public ErrorResponse handleAccessDeniedException(AccessDeniedException e) {
-		return new ErrorResponse(ErrorCodeEnum.ACCESS_DENIED.getCode(), ErrorCodeEnum.ACCESS_DENIED.getMessage());
-	}
+//	@ExceptionHandler(AccessDeniedException.class)
+//
+//	@ResponseStatus(code = HttpStatus.FORBIDDEN)
+//	public ErrorResponse handleAccessDeniedException(AccessDeniedException e) {
+//		return new ErrorResponse(ErrorCodeEnum.ACCESS_DENIED.getCode(), ErrorCodeEnum.ACCESS_DENIED.getMessage());
+//	}
 
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)

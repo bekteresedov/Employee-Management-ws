@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,11 +13,8 @@ import lombok.experimental.FieldDefaults;
 public class EmployeeResponse {
 	
 	Long id;
-
-	String name;
-
-	String surname;
-
+	String firstName;
+	String lastName;
 	String email;
 	
 

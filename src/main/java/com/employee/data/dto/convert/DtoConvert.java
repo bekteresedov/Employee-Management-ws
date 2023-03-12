@@ -10,8 +10,8 @@ public class DtoConvert {
 	public static Employee getCreateEmployeeToEntity(EmployeeCreate employeeCreate) {
 		Employee employee = new Employee();
 
-		employee.setName(employeeCreate.getName());
-		employee.setSurname(employeeCreate.getSurname());
+		employee.setFirstName(employeeCreate.getFirstName());
+		employee.setLastName(employeeCreate.getLastName());
 		employee.setEmail(employeeCreate.getEmail());
 
 		return employee;
@@ -19,8 +19,8 @@ public class DtoConvert {
 
 	public static Employee getUpdateEmployeeToEntity(EmployeeUpdate employeeUpdate) {
 		Employee employee = new Employee();
-		employee.setName(employeeUpdate.getName());
-		employee.setSurname(employeeUpdate.getSurname());
+		employee.setFirstName(employeeUpdate.getFirstName());
+		employee.setLastName(employeeUpdate.getLastName());
 		employee.setEmail(employeeUpdate.getEmail());
 
 		return employee;
@@ -29,8 +29,8 @@ public class DtoConvert {
 	public static EmployeeResponse getEntityEmployeeResponse(Employee employee) {
 		EmployeeResponse employeeResponse = new EmployeeResponse();
 		employeeResponse.setId(employee.getId());
-		employeeResponse.setName(employee.getName());
-		employeeResponse.setSurname(employee.getSurname());
+		employeeResponse.setFirstName(employee.getFirstName());
+		employeeResponse.setLastName(employee.getLastName());
 		employeeResponse.setEmail(employee.getEmail());
 
 		return employeeResponse;

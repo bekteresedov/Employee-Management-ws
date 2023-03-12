@@ -22,7 +22,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Service
-
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class EmployeeServiceImpl implements EmployeeService {
@@ -34,7 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 		List<Employee> employees = employeeRepository.findAll();
 		return employees.stream()
-				.map(emp -> new EmployeeResponse(emp.getId(), emp.getName(), emp.getSurname(), emp.getEmail()))
+				.map(emp -> new EmployeeResponse(emp.getId(), emp.getFirstName(), emp.getLastName(), emp.getEmail()))
 				.collect(Collectors.toList());
 
 	}
@@ -61,8 +60,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 			Employee foundEmployee = employee.get();
 
-			foundEmployee.setName(newEmployeeUpdate.getName());
-			foundEmployee.setSurname(newEmployeeUpdate.getSurname());
+			foundEmployee.setFirstName(newEmployeeUpdate.getFirstName());
+			foundEmployee.setLastName(newEmployeeUpdate.getLastName());
 			foundEmployee.setEmail(newEmployeeUpdate.getEmail());
 
 			return DtoConvert.getEntityEmployeeResponse(employeeRepository.save(foundEmployee));

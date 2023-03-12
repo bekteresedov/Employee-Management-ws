@@ -12,11 +12,10 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class EmployeeUpdate {
 	@NotBlank
-	String name;
+	String firstName;
 
 	@NotBlank
-	String surname;
-
+	String lastName;
 	@Email
 	String email;
 
